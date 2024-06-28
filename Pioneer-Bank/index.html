@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    
+</head>
+
+<body>
+    <div class="" id="login-area">
+        <h1 class="bank-title">Welcome to pioneer Bank</h1>
+        <div class="submit-area">
+            <h4>Login</h4>
+            <input type="text" class="form-control">
+            <input type="password" class="form-control">
+            <button id="login" class="btn btn-success">Login</button>
+        </div>
+
+
+
+    </div>
+
+    <div class="" id="transaction-area">
+
+        <h1>Transaction Area </h1>
+        <div class="row">
+            <div class="col-4 ">
+                <div class="deposit status">
+                    <h3>Deposit</h3>
+                    <h5>BDT <span id="currentAmount">00</span></h5>
+                </div>
+            </div>
+
+
+            <div class="col-4 ">
+
+
+                <div class="withdraw status">
+                    <h3>Withdraw</h3>
+                    <h5>BDT <span id="currentWithdraw">00</span></h5>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="balance status">
+
+
+                    <h3>Balance</h3>
+                    <h5>BDT <span id="currentBalance">00</span></h5>
+                </div>
+            </div>
+
+        </div>
+        <div class="row ">
+            
+                <div class="col-md-6 ">
+                    <div class="submit-area">
+                    <h4>Deposit</h4>
+                    <input type="text" id="depositAmount" class="form-control" placeholder="Amount you want to Deposit">
+                    <button class="btn btn-success" id="addDeposit">Deposit</button>
+                </div>
+            </div>
+
+          
+                <div class="col-md-6 ">
+                    <div class="submit-area">
+                    <h4> Withdraw</h4>
+                    <input type="text" class="form-control" id="removeAmount" placeholder="Amount you want to in BDT">
+                    <button class="btn btn-success" id="withdrawAmount"> Withdraw</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //login action handle
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click", function () {
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
+        });
+
+        //deposit action handle
+        /*
+const depositBtn=document.getElementById("addDeposit");
+depositBtn.addEventListener("click",function(){
+    const depositBalance=parseFloat(depositAmount);
+    const currentAmount=document.getElementById("currentAmount").innerText;
+    const currentBalance=parseFloat("currentAmount");
+    const totalDeposit=depositBalance+currentBalance;
+    
+document.getElementById("currentAmount").innerText=totalDeposit;
+
+})
+*/
+
+const depositBtn = document.getElementById("addDeposit");
+depositBtn.addEventListener("click", function () {
+    const depositAmount = parseFloat(document.getElementById("depositAmount").value); // Parse deposit amount
+    
+
+    const currentAmount = parseFloat(document.getElementById("currentAmount").innerText);
+    
+   
+    const totalDeposit = depositAmount + currentAmount;
+    
+    
+    document.getElementById("currentAmount").innerText = totalDeposit.toFixed(2); // Display with two decimal places
+});
+const withdrawBtn=document.getElementById("withdrawAmount");
+withdrawBtn.addEventListener("click",function(){
+    const removeAmount = parseFloat(document.getElementById("removeAmount").value);
+    const currentWithdraw = parseFloat(document.getElementById("currentWithdraw").innerText);
+    //const removeAmount = parseFloat(document.getElementById("removetAmount").innerText);
+    const totalWithdraw =  currentWithdraw+removeAmount;
+    document.getElementById("currentWithdraw").innerText = totalWithdraw.toFixed(2);
+ 
+    
+})
+
+currentBalance=totalDeposit-removeAmount;
+const currentBalance=getElementById(currentBalance);
+document.getElementById("currentBalance").innerText=currentBalance.toFixed(3);
+// withdraw
+    </script>
+</body>
+
+</html>

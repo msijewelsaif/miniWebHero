@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        <h1 class="title">Shopping Cart</h1>
+        <div class="card">
+            <div class="card-image">
+                <img src="image/phone1.jpg" class="img" alt="">
+            </div>
+            <div class="card-details">
+                <h1>Oppo A9</h1>
+                <h2>Price: BDT <span id="price">9000</span></h2>
+                <i class="icon fa-solid fa-plus" onclick="increment('count1', 'price', 'item')"></i>
+                <input type="button" id="count1" value="0">
+                <i class="icon fa-solid fa-minus" onclick="decrement('count1', 'price', 'item')"></i>
+                <br>
+                <span class="item">Your Item: BDT <span id="item">0</span></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="image/phone2.jpg" class="img" alt="">
+            </div>
+            <div class="card-details">
+                <h1>Google Pixel</h1>
+                <h2>Price: BDT <span id="price1">19000</span></h2>
+                <i class="icon fa-solid fa-plus" onclick="increment('count2', 'price1', 'item1')"></i>
+                <input type="button" id="count2" value="0">
+                <i class="icon fa-solid fa-minus" onclick="decrement('count2', 'price1', 'item1')"></i>
+                <br>
+                <span class="item">Your Item: BDT <span id="item1">0</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="fixed">
+        <h1 class="title">Total Price</h1>
+        <h3 class="total">Total Price: <span id="pr_price">00</span> BDT</h3>
+        <h2 class="total">Delivery Charge: <span id="charge">150</span> BDT</h2>
+        <h3 class="total">Coupon Code: <input type="text" class="coupon"></h3>
+        <button>Apply Coupon</button>
+        <h3 class="total">Discount: BDT</h3>
+        <h3 class="total">Grand Total: <span id="gd_total">00</span> BDT</h3>
+        <button class="btn">Checkout</button>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
