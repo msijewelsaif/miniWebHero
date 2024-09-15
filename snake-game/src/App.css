@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.game-area {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+.snake-part {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+}
+
+.food {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
+
+canvas {
+  background-color: black;
+}
