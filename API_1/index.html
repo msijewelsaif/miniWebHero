@@ -2,16 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First API Interaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8b500, #fceabb);
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+
+        button:first-child {
+            background: #007bff;
+            color: white;
+        }
+
+        button:first-child:hover {
+            background: #0056b3;
+        }
+
+        button:last-child {
+            background: #28a745;
+            color: white;
+        }
+
+        button:last-child:hover {
+            background: #1e7e34;
+        }
+    </style>
 </head>
 <body>
-    <h1>This is first API </h1>
-    <h2>Start Learning from here </h2><a href="">Click Here</a>
+    <h1>This is the First API</h1>
+    <h2>Start Learning from Here</h2>
+    <div class="button-container">
+        <button onclick="redirectTo('userAPI.html')">Random User</button>
+        <button onclick="redirectTo('weaterAPI.html')">Weather CHeck</button>
+    </div>
+
+    <script>
+        // Function to redirect to a specific URL
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        // Fetch data from the Bored API
+        fetch('http://www.boredapi.com/api/activity')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    </script>
 </body>
-<script>
-    fetch('http://www.boredapi.com/api/activity')
-    .then(response => response.json())
-    .then(data => console.log(data))
-</script>
 </html>
