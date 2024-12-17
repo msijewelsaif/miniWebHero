@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch User API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        #user-info {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+        }
+
+        span {
+            font-weight: bold;
+            color: #444;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetch User API</h1>
+    <div id="user-info">
+        <img src="" alt="User Photo" id="photo"><br>
+        Name: <span id="name"></span> <span id="lastName"></span><br>
+        Email: <span id="email"></span><br>
+        Gender: <span id="gender"></span><br>
+    </div>
+    <button onclick="update()">Fetch User</button>
+   <a href="weaterAPI.html"> <button>Weather Page</button></a>
+
+    <footer>
+        Powered by <a href="https://randomuser.me" target="_blank" style="color: #007BFF; text-decoration: none;">Random User API</a>
+    </footer>
+
+    <script>
+        function update() {
+            fetch('https://randomuser.me/api/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.results[0]);
+                document.getElementById('name').innerText = data.results[0].name.first;
+                document.getElementById('lastName').innerText = data.results[0].name.last;
+                document.getElementById('email').innerText = data.results[0].email;
+                document.getElementById('gender').innerText = data.results[0].gender;
+                document.getElementById('photo').src = data.results[0].picture.large;
+            })
+            .catch(error => {
+                console.error('Error fetching user:', error);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhaka Weather</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 36px;
+        }
+
+        #weather-info {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        span {
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dhaka Weather</h1>
+    <div id="weather-info">
+        <p>Weather: <span id="weather">Loading...</span></p>
+        <p>Temperature: <span id="temperature">Loading...</span>°C</p>
+    </div>
+    <footer>
+        Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeather API</a>
+    </footer>
+
+    <script>
+        const API_KEY = '46ad7457603b9b0104e633e78cd60e16';
+        const city = 'Dhaka';
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById('weather').innerText = data.weather[0].main;
+                document.getElementById('temperature').innerText = data.main.temp;
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById('weather').innerText = "Error loading weather";
+                document.getElementById('temperature').innerText = "N/A";
+            });
+    </script>
+</body>
+</html>
