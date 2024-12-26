@@ -1,0 +1,110 @@
+/* Tailwind base styles will handle most requirements */
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Material Icons size customization */
+.material-icons {
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Sidebar navigation hover effect */
+.nav-item:hover {
+    background-color: #6b46c1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Footer styles */
+footer {
+    color: #ccc;
+}
+
+/* Button hover effect */
+button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+/* Card styles */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card hover animation */
+.card:hover {
+    transform: scale(1.02);
+    background: linear-gradient(45deg, #6b46c1, #553c9a);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adding subtle animation for card content */
+.card:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-30deg);
+    animation: cardShimmer 1.5s infinite;
+    pointer-events: none;
+}
+
+/* Shimmer animation for cards */
+@keyframes cardShimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Sidebar and header hover animations for icons */
+.material-icons:hover {
+    color: #e9d8fd;
+    transform: scale(1.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Adding animation to the page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applying fade-in animation to cards */
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Button click feedback effect */
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Header animation */
+header {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Sidebar navigation items animation */
+nav a {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.2s;
+}
