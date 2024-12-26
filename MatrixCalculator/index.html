@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Matrix Calculator</h1>
+        <div class="size-input">
+            <label for="rows">Rows:</label>
+            <input type="number" id="rows" min="1" placeholder="Enter rows">
+            <label for="columns">Columns:</label>
+            <input type="number" id="columns" min="1" placeholder="Enter columns">
+            <button onclick="generateMatrixInputs()">Generate Matrices</button>
+        </div>
+        <div id="matrix-container"></div>
+        <div class="operations">
+            <button id="add-btn" onclick="addMatrices()" disabled>Add</button>
+            <button id="subtract-btn" onclick="subtractMatrices()" disabled>Subtract</button>
+            <button id="multiply-btn" onclick="multiplyMatrices()" disabled>Multiply</button>
+            <button id="inverse-btn" onclick="inverseMatrix()" disabled>Inverse</button>
+        </div>
+    </div>
+
+    <!-- Modal for displaying results -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Result</h3>
+            <pre id="result"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
