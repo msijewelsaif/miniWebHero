@@ -1,0 +1,59 @@
+/* Tailored custom CSS for the dashboard */
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.material-icons {
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Sidebar hover effects */
+.nav-link:hover {
+    background-color: #6c757d;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Header animation */
+header {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Card hover effect */
+.hover-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for card */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer styles */
+footer {
+    color: #ddd;
+}
+
+/* Sidebar and header icon hover animation */
+.material-icons:hover {
+    color: #e9d8fd;
+    transform: scale(1.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Button click feedback effect */
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+}
