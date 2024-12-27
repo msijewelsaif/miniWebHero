@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+  
+  <div class="flex flex-wrap items-center w-full max-w-6xl bg-white rounded-lg shadow-lg overflow-hidden">
+    <!-- Hero Section -->
+    <div class="w-full md:w-1/2 p-8 bg-gradient-to-br from-purple-600 to-indigo-500 text-white">
+      <h1 class="text-4xl font-bold">Join Us Today</h1>
+      <p class="mt-4 text-lg">
+        Sign up to unlock premium features and explore the full potential of our platform. It only takes a few minutes!
+      </p>
+      <ul class="mt-6 space-y-4">
+        <li class="flex items-center">
+          <svg class="w-6 h-6 mr-2 text-green-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Access to exclusive content
+        </li>
+        <li class="flex items-center">
+          <svg class="w-6 h-6 mr-2 text-green-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+          24/7 Customer Support
+        </li>
+        <li class="flex items-center">
+          <svg class="w-6 h-6 mr-2 text-green-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Secure and private platform
+        </li>
+      </ul>
+    </div>
+
+    <!-- Registration Form Section -->
+    <div class="w-full md:w-1/2 p-8">
+      <h2 class="text-2xl font-semibold text-gray-800">Create an Account</h2>
+      <form id="registrationForm" class="mt-6 space-y-6">
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
+          <input
+            type="text"
+            id="username"
+            required
+            class="w-full px-4 py-2 mt-1 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            placeholder="Choose a username"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-600">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            required
+            class="w-full px-4 py-2 mt-1 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            placeholder="you@example.com"
+          />
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+          <input
+            type="password"
+            id="password"
+            required
+            class="w-full px-4 py-2 mt-1 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            placeholder="Enter a strong password"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-4 py-2 text-white bg-indigo-500 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-400 focus:ring-opacity-50 transition duration-300 transform hover:scale-105"
+        >
+          Register
+        </button>
+      </form>
+      <p class="mt-4 text-sm text-center text-gray-600">
+        Already have an account? 
+        <a href="#" class="text-indigo-500 hover:underline">Sign in</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Welcome aboard! Your account has been created.');
+    });
+  </script>
+</body>
+</html>
