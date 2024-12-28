@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateway</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-md">
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-gray-800 text-center">Secure Payment</h1>
+    <p class="text-sm text-gray-500 text-center mt-2">Complete your payment below</p>
+
+    <!-- Payment Form -->
+    <form class="mt-6 space-y-6">
+      <!-- Cardholder Name -->
+      <div>
+        <label for="cardholderName" class="block text-sm font-medium text-gray-700">Cardholder Name</label>
+        <input 
+          type="text" 
+          id="cardholderName" 
+          placeholder="John Doe" 
+          class="w-full px-4 py-2 mt-1 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+      </div>
+
+      <!-- Card Number -->
+      <div>
+        <label for="cardNumber" class="block text-sm font-medium text-gray-700">Card Number</label>
+        <input 
+          type="text" 
+          id="cardNumber" 
+          placeholder="1234 5678 9012 3456" 
+          class="w-full px-4 py-2 mt-1 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+      </div>
+
+      <!-- Expiry Date and CVV -->
+      <div class="flex space-x-4">
+        <div class="flex-1">
+          <label for="expiryDate" class="block text-sm font-medium text-gray-700">Expiry Date</label>
+          <input 
+            type="text" 
+            id="expiryDate" 
+            placeholder="MM/YY" 
+            class="w-full px-4 py-2 mt-1 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+        <div class="flex-1">
+          <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+          <input 
+            type="text" 
+            id="cvv" 
+            placeholder="123" 
+            class="w-full px-4 py-2 mt-1 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <!-- Payment Button -->
+      <button 
+        type="submit" 
+        class="w-full py-3 px-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+      >
+        Pay $99.99
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <div class="mt-6 text-center text-gray-500 text-sm">
+      <p>Your payment is secure and encrypted. <a href="#" class="text-blue-600 hover:underline">Learn More</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

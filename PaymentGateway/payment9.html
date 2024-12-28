@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSLCommerz Multiple Payment Methods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <!-- Main Payment Card -->
+  <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+    <!-- Branding -->
+    <div class="flex justify-center">
+      <img src="https://www.sslcommerz.com/wp-content/uploads/2020/03/sslcommerz-logo.png" alt="SSLCommerz Logo" class="w-40">
+    </div>
+    <h1 class="mt-4 text-2xl font-bold text-center text-blue-600">SSLCommerz Payment Gateway</h1>
+    <p class="mt-2 text-sm text-center text-gray-600">Choose your preferred payment method</p>
+
+    <!-- Payment Form -->
+    <form id="paymentForm" class="mt-6 space-y-4">
+      <!-- Customer Info -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        />
+      </div>
+      <div>
+        <label for="amount" class="block text-sm font-medium text-gray-700">Payment Amount</label>
+        <input
+          type="number"
+          id="amount"
+          placeholder="Enter payment amount (e.g., ৳500)"
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        />
+      </div>
+
+      <!-- Payment Method Selection -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Select Payment Method</label>
+        <select
+          id="paymentMethod"
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        >
+          <option value="" disabled selected>Select your payment method</option>
+          <option value="banking">Banking (Credit/Debit Card)</option>
+          <option value="mobileBanking">Mobile Banking (bKash, Nagad)</option>
+          <option value="onlineBanking">Online Banking</option>
+        </select>
+      </div>
+
+      <!-- Payment Button -->
+      <button
+        type="submit"
+        class="w-full py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+      >
+        Proceed to Pay
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <p class="mt-4 text-sm text-center text-gray-600">
+      By proceeding, you agree to the <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>.
+    </p>
+  </div>
+
+  <!-- Script for Simulating Payment -->
+  <script>
+    const form = document.getElementById('paymentForm');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const amount = document.getElementById('amount').value;
+      const paymentMethod = document.getElementById('paymentMethod').value;
+
+      if (name && email && amount && paymentMethod) {
+        let paymentMessage = '';
+
+        switch(paymentMethod) {
+          case 'banking':
+            paymentMessage = `Processing payment of ৳${amount} via Banking (Credit/Debit Card)...`;
+            break;
+          case 'mobileBanking':
+            paymentMessage = `Processing payment of ৳${amount} via Mobile Banking (bKash/Nagad)...`;
+            break;
+          case 'onlineBanking':
+            paymentMessage = `Processing payment of ৳${amount} via Online Banking...`;
+            break;
+          default:
+            paymentMessage = 'Please select a valid payment method.';
+        }
+
+        alert(paymentMessage);
+        // Here, replace with SSLCommerz API integration code to complete the payment.
+      } else {
+        alert('Please fill in all fields!');
+      }
+    });
+  </script>
+</body>
+</html>

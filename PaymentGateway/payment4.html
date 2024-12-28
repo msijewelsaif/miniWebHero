@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Payment Gateway</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-green-400 to-teal-500 min-h-screen flex items-center justify-center">
+
+  <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+    <!-- Logo and Title -->
+    <div class="flex flex-col items-center">
+      <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+        </svg>
+      </div>
+      <h1 class="mt-4 text-2xl font-bold text-center text-gray-800">Cash Payment</h1>
+      <p class="mt-2 text-sm text-center text-gray-600">Complete your payment with cash</p>
+    </div>
+
+    <!-- Payment Form -->
+    <form class="mt-6 space-y-4">
+      <!-- Amount -->
+      <div>
+        <label for="amount" class="block text-sm font-medium text-gray-700">Payment Amount</label>
+        <input 
+          type="text" 
+          id="amount" 
+          placeholder="Enter amount (e.g., 500)" 
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+        />
+      </div>
+
+      <!-- Cash Tendered -->
+      <div>
+        <label for="cashTendered" class="block text-sm font-medium text-gray-700">Cash Tendered</label>
+        <input 
+          type="text" 
+          id="cashTendered" 
+          placeholder="Enter cash tendered" 
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+        />
+      </div>
+
+      <!-- Change Display -->
+      <div>
+        <label for="change" class="block text-sm font-medium text-gray-700">Change</label>
+        <input 
+          type="text" 
+          id="change" 
+          placeholder="Calculated change will appear here" 
+          disabled
+          class="w-full px-4 py-2 mt-1 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none text-gray-500"
+        />
+      </div>
+
+      <!-- Transaction Button -->
+      <button 
+        type="submit" 
+        id="payButton" 
+        class="w-full py-3 px-4 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 focus:ring-4 focus:ring-green-400 focus:ring-opacity-50"
+      >
+        Complete Payment
+      </button>
+    </form>
+
+    <!-- Instructions -->
+    <div class="mt-4 text-sm text-gray-600 text-center">
+      <p>Ensure you provide the exact amount if possible.</p>
+      <p>Change will be calculated automatically.</p>
+    </div>
+  </div>
+
+  <!-- Script for Change Calculation -->
+  <script>
+    const amountInput = document.getElementById('amount');
+    const cashTenderedInput = document.getElementById('cashTendered');
+    const changeInput = document.getElementById('change');
+
+    cashTenderedInput.addEventListener('input', () => {
+      const amount = parseFloat(amountInput.value) || 0;
+      const cashTendered = parseFloat(cashTenderedInput.value) || 0;
+      const change = cashTendered - amount;
+
+      changeInput.value = change > 0 ? change.toFixed(2) : "0.00";
+    });
+  </script>
+</body>
+</html>
